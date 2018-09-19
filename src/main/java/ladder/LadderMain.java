@@ -5,7 +5,7 @@ public class LadderMain {
         int peopleCount = InputView.inputPeople();
         int height = InputView.inputHeight();
         String[][] dimension = new String[height][2*peopleCount-1];
-        LadderMake.makeLadderCall(dimension);
+        LadderMake.makeLadder(dimension);
         PrintView.valuePrint(dimension);
     }
 }

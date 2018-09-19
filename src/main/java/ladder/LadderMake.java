@@ -7,7 +7,7 @@ public class LadderMake {
     private static final String DASH = "-";
     private static final String BLANK = " ";
 
-    public static void makeLadderCall(String[][] dimension){
+    public static void makeLadder(String[][] dimension){
         for (int i = 0; i < dimension.length; i++) {
             makeLadder(dimension[i]);
         }
