@@ -3,7 +3,7 @@ package ladder;
 import java.util.Scanner;
 
 public class InputView {
-        static Scanner scan = new Scanner(System.in);
+    static Scanner scan = new Scanner(System.in);
 
     public static int inputPeople() {
         System.out.println("참여할 사람은 몇 명 인가요?");
