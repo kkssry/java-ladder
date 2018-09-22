@@ -1,19 +1,19 @@
 package ladder;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class LadderMake {
-    ArrayList<Row> list = new ArrayList<>();
+    ArrayList<Row> all = new ArrayList<>();
     int height;
 
     public LadderMake(int height) {
         this.height = height;
     }
 
-    public  ArrayList<Row> rowMake (int pedalCount) {
+    public ArrayList<Row> rowMake(int peopleCount) {
         for (int i = 0; i < height; i++)
-             list.add(new Row(pedalCount));
-        return list;
+            all.add(new Row(peopleCount));
+        return all;
     }
 }
 
