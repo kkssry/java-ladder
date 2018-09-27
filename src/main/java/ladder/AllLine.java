@@ -34,8 +34,5 @@ public class AllLine {
         String[] values = value.split(DIVISION);
         return values;
     }
-
-
-
 }
 

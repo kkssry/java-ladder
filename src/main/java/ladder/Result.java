@@ -22,7 +22,6 @@ public class Result {
             position = ladderResult(ladder, position);
             ladderResult.add(resultValue[position]);
         }
-//		System.out.println(ladderResult);
     }
 
     private static int ladderResult(ArrayList<Line> ladder, int position) {

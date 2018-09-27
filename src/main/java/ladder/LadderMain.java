@@ -9,7 +9,7 @@ public class LadderMain {
         int height = InputView.inputHeight();
 
         AllLine allLine = new AllLine(height);
-        ArrayList<Line> ladder = new ArrayList<>();
+        ArrayList<Line> ladder;
         ladder = allLine.allLineMake(names.length);
 
         PrintView.valuePrint(names);
