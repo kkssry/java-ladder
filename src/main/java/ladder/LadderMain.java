@@ -4,21 +4,17 @@ import java.util.*;
 
 public class LadderMain {
     public static void main(String[] args) {
-        String[] names = AllLine.nameCheck(InputView.inputName());
-        String[] resultValue = Result.resultCheck(names,InputView.inputResult());
+        String[] names = InputView.nameCheck(InputView.inputName());
+        String[] resultValue = InputView.resultLengthCheck(names, InputView.inputResult());
         int height = InputView.inputHeight();
 
-        AllLine allLine = new AllLine(height);
-        ArrayList<Line> ladder;
-        ladder = allLine.allLineMake(names.length);
+        ArrayList<Line> ladder = AllLine.allLineMake(names.length, height);
 
         PrintView.valuePrint(names);
         PrintView.ladderPrint(ladder);
         PrintView.valuePrint(resultValue);
 
-        Result.ladderResult(ladder,resultValue);
-        Map<String, String> NameAndValue = Result.matchingName(names);
-        PrintView. finalResult(NameAndValue,InputView.choicePerson());
-
+        Result.ladderResult(ladder, resultValue);
+        PrintView.isName(Result.matchName(names), InputView.choicePerson());
     }
 }
