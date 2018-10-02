@@ -29,6 +29,10 @@ public class InputView {
 
     public static String[] nameCheck(String inputName) {
         String[] names = valueSplit(inputName);
+        if (names.length == 1) {
+            PrintView.noPlay();
+            names = nameCheck(inputName());
+        }
         for (int i = 0; i < names.length; i++) {
             if (names[i].length() > LIMIT_NUMBER || names[i].trim().isEmpty()) {
                 PrintView.reWrite();

@@ -14,6 +14,16 @@ public class Line {
         points.add(false);
     }
 
+    public int move(int position) {
+        if (points.get(position)) {
+            position++;
+            return position;
+        }
+        if (position > 0 && points.get(position - 1))
+            position--;
+        return position;
+    }
+
     public ArrayList<Boolean> getPoints() {
         return points;
     }

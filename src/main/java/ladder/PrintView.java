@@ -23,9 +23,9 @@ public class PrintView {
         }
     }
 
-    public static void ladderPrint(ArrayList<Line> all) {
-        for (int i = 0; i < all.size(); i++) {
-            valuePrint(all.get(i));
+    public static void ladderPrint(ArrayList<Line> allLine) {
+        for (int i = 0; i < allLine.size(); i++) {
+            valuePrint(allLine.get(i));
             System.out.println();
         }
     }
@@ -39,7 +39,7 @@ public class PrintView {
     }
 
     public static void reWrite() {
-        System.out.println("값이 없거나 다섯글자를 초과하였습니다.");
+        System.out.println("이름이 없거나 다섯글자를 초과하였습니다.");
     }
 
     public static void notLengthMatch() {
@@ -51,10 +51,15 @@ public class PrintView {
         if (nameAndValue.containsKey(name)) {
             String resultValue = nameAndValue.get(name);
             System.out.println(resultValue);
-            isName(nameAndValue, InputView.choicePerson());                    // all을 입력할때까지 게임 결과를 물어본다.
+            isName(nameAndValue, InputView.choicePerson());
+            // all을 입력할때까지 게임 결과를 물어본다.
+        }
+        if (!name.equals("all") && !nameAndValue.containsKey(name)) {
+            isName(nameAndValue, InputView.choicePerson());
+
         }
         if (name.equals("all"))
-            allPrint(nameAndValue);
+            allPrint(nameAndValue);                                            // 결과를 보고 싶은 사람이 없을 경우 다시 물어본다.
     }
 
     private static void allPrint(Map<String, String> nameAndValue) {
@@ -64,5 +69,9 @@ public class PrintView {
             String name = names.next();
             System.out.println(name + ":" + nameAndValue.get(name));
         }
+    }
+
+    public static void noPlay() {
+        System.out.println("혼자서는 플레이 할 수 없습니다.");
     }
 }
